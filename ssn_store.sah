@@ -39,5 +39,3 @@ function getSSN(){
 	return ($tempSSN);
 }
 
-var $ssn = getSSN();
-_debug($ssn);

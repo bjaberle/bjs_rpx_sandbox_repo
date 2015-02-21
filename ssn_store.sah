@@ -1,0 +1,43 @@
+/**
+*  @title: SSN Counter
+*  @author: BJ Aberle | bjaberle@ionagroup.com
+*  @description: Description of library, Test Case, 
+*/
+
+// -------------------------------------------------
+//      SECTION NAME
+// -------------------------------------------------
+
+/*****************************************
+*Function: function name
+*Description: This code can be called when testing the RPX 
+application and a unique SSN is needed. This pulls a 9 digit string,
+parses it into an Int and increments it by 1. "ssn_counter.txt" file
+is relative to the snn_store.sah file
+*Expected Result: A fresh, ready to use SSN for test data
+*Arguments:
+*   $variable = variable description
+*****************************************/
+
+function getSSN(){
+
+	var $filePath = "ssn_counter.txt";
+	var $tempSSN = _readFile($filePath);
+	var $message = "SSN Incremented";
+	var $overwrite = true;
+	parseInt($tempSSN);
+
+		_debug($tempSSN);
+
+		$tempSSN++;
+
+		_writeFile($tempSSN, $filePath, $overwrite);
+
+		_debug($tempSSN);
+		_debug($message);
+
+	return ($tempSSN);
+}
+
+var $ssn = getSSN();
+_debug($ssn);
